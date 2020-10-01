@@ -16,5 +16,20 @@ namespace LibraryAutomatioonWindowsForm
         {
             InitializeComponent();
         }
+
+        private void btnGiris_Click(object sender, EventArgs e)
+        {
+            string loginAd = txtAd.Text;
+            string loginSifre = txtSifre.Text;
+
+            if (loginAd.Equals("Admin") && loginSifre.Equals("123"))
+            {
+                MessageBox.Show("Başarılı");
+            }
+            else
+            {
+                MessageBox.Show("Kullanıcı veya şifre hatalı!!!");
+            }
+        }
     }
 }
