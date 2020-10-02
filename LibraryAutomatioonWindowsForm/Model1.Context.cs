@@ -26,5 +26,6 @@ namespace LibraryAutomatioonWindowsForm
         }
     
         public virtual DbSet<PERSONELLER> PERSONELLER { get; set; }
+        public virtual DbSet<KULLANICILAR> KULLANICILAR { get; set; }
     }
 }

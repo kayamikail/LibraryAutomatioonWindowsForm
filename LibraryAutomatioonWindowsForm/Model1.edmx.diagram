@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="3ac3cb72bc144eae90eee0beefb1979e" Name="Diagram1">
         <EntityTypeShape EntityType="LibraryAutomationModel.PERSONELLER" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryAutomationModel.KULLANICILAR" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

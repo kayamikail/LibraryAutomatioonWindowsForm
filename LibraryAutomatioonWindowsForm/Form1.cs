@@ -31,10 +31,17 @@ namespace LibraryAutomatioonWindowsForm
             }
             else
             {
-                MessageBox.Show("Başarılı");
+               // MessageBox.Show("Başarılı");
+                islemPaneli panel = new islemPaneli();
+                panel.Show();
+                this.Hide();
             }
+
+           
 
             
         }
+
+       
     }
 }

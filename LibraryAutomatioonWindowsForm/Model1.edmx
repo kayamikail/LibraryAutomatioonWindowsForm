@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LibraryAutomationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LibraryAutomationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="KULLANICILAR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KULLANICIAD" Type="varchar" MaxLength="50" />
+          <Property Name="KULLANICISOYAD" Type="varchar" MaxLength="50" />
+          <Property Name="KULLANICITC" Type="varchar" MaxLength="11" />
+          <Property Name="KULANICIMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="KULLANICITEL" Type="varchar" MaxLength="11" />
+          <Property Name="KULLANICICEZA" Type="float" />
+        </EntityType>
         <EntityType Name="PERSONELLER">
           <Key>
             <PropertyRef Name="ID" />
@@ -19,10 +31,10 @@
           <Property Name="PERSONELSIFRE" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityContainer Name="LibraryAutomationModelStoreContainer">
+          <EntitySet Name="KULLANICILAR" EntityType="Self.KULLANICILAR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PERSONELLER" EntityType="Self.PERSONELLER" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LibraryAutomationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -41,7 +53,20 @@
         </EntityType>
         <EntityContainer Name="LibraryAutomationEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PERSONELLER" EntityType="Self.PERSONELLER" />
+          <EntitySet Name="KULLANICILAR" EntityType="LibraryAutomationModel.KULLANICILAR" />
         </EntityContainer>
+        <EntityType Name="KULLANICILAR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KULLANICISOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KULLANICITC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KULANICIMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KULLANICITEL" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="KULLANICICEZA" Type="Double" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -59,6 +84,19 @@
                 <ScalarProperty Name="PERSONELMAIL" ColumnName="PERSONELMAIL" />
                 <ScalarProperty Name="PERSONELKULLANICIAD" ColumnName="PERSONELKULLANICIAD" />
                 <ScalarProperty Name="PERSONELSIFRE" ColumnName="PERSONELSIFRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KULLANICILAR">
+            <EntityTypeMapping TypeName="LibraryAutomationModel.KULLANICILAR">
+              <MappingFragment StoreEntitySet="KULLANICILAR">
+                <ScalarProperty Name="KULLANICICEZA" ColumnName="KULLANICICEZA" />
+                <ScalarProperty Name="KULLANICITEL" ColumnName="KULLANICITEL" />
+                <ScalarProperty Name="KULANICIMAIL" ColumnName="KULANICIMAIL" />
+                <ScalarProperty Name="KULLANICITC" ColumnName="KULLANICITC" />
+                <ScalarProperty Name="KULLANICISOYAD" ColumnName="KULLANICISOYAD" />
+                <ScalarProperty Name="KULLANICIAD" ColumnName="KULLANICIAD" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

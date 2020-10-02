@@ -40,27 +40,29 @@
             // 
             // btnGiris
             // 
+            this.btnGiris.BackColor = System.Drawing.Color.Teal;
             this.btnGiris.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGiris.Location = new System.Drawing.Point(136, 335);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(170, 41);
             this.btnGiris.TabIndex = 0;
             this.btnGiris.Text = "GİRİŞ";
-            this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(136, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 139);
+            this.pictureBox1.Size = new System.Drawing.Size(431, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // txtAd
             // 
+            this.txtAd.BackColor = System.Drawing.Color.Teal;
             this.txtAd.Location = new System.Drawing.Point(136, 218);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(170, 20);
@@ -68,6 +70,7 @@
             // 
             // txtSifre
             // 
+            this.txtSifre.BackColor = System.Drawing.Color.Teal;
             this.txtSifre.Location = new System.Drawing.Point(136, 280);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(170, 20);
@@ -97,8 +100,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(466, 444);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.ClientSize = new System.Drawing.Size(455, 433);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSifre);
@@ -109,6 +112,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
