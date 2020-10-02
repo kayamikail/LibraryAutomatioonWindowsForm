@@ -12,6 +12,7 @@ namespace LibraryAutomatioonWindowsForm
 {
     public partial class Form1 : Form
     {
+        LibraryAutomationEntities db = new LibraryAutomationEntities();
         public Form1()
         {
             InitializeComponent();
@@ -22,14 +23,18 @@ namespace LibraryAutomatioonWindowsForm
             string loginAd = txtAd.Text;
             string loginSifre = txtSifre.Text;
 
-            if (loginAd.Equals("Admin") && loginSifre.Equals("123"))
-            {
-                MessageBox.Show("Başarılı");
-            }
-            else
+            var personel = db.PERSONELLER.Where(x => x.PERSONELAD.Equals(loginAd) && x.PERSONELSIFRE.Equals(loginSifre)).FirstOrDefault();
+
+            if (personel == null)
             {
                 MessageBox.Show("Kullanıcı veya şifre hatalı!!!");
             }
+            else
+            {
+                MessageBox.Show("Başarılı");
+            }
+
+            
         }
     }
 }
